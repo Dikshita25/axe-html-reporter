@@ -65,7 +65,7 @@ export function prepareReportData({
     const violationsSummaryTable = simplifyAxeResultForSummary(violations);
     // Prepare data to show detailed list of violations
     const violationsDetails = violations.map(
-        ({ nodes, impact, description, help, id, tags, helpUrl }, issueIndex) => {
+        ({ nodes, impact, description, help, id, tags, helpUrl, specName }, issueIndex) => {
             return {
                 index: issueIndex + 1,
                 wcag: getWcagReference(tags),
@@ -100,6 +100,7 @@ export function prepareReportData({
                         fixSummaries,
                         relatedNodesAny,
                         index: nodeIndex + 1,
+                        specName,
                     };
                 }),
             };

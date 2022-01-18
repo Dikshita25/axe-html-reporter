@@ -88,6 +88,7 @@ declare module 'axe-core' {
         impact?: ImpactValue;
         tags: TagValue[];
         nodes: NodeResult[];
+        specName: string;
     }
 
     interface NodeResult {
